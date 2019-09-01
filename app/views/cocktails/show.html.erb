@@ -1,0 +1,12 @@
+<%= @cocktail.name %>
+<br>
+
+<div class="ingredient-card">
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description, collection: 1..5%>
+    <%= f.association :ingredient %>
+    <%= f.button :submit, class:"btn btn-primary" %>
+    <% end %>
+</div>
+
+<%= link_to "back", cocktails_path %>

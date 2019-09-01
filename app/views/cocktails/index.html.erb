@@ -1,0 +1,14 @@
+<div class="container">
+  <% @cocktails.each do |cocktail| %>
+    <%# raise %>
+  <%= link_to cocktail_path(cocktail.id) do %>
+    <div class="card">
+      <%= cocktail.name %>
+      <%= link_to 'Destroy',  cocktail,  method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+    <% end %>
+  <% end %>
+
+  <%= link_to "Create a Cocktail", new_cocktail_path %>
+
+</div>
