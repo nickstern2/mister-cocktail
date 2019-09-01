@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'autoprefixer-rails'
-
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
