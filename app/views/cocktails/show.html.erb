@@ -1,0 +1,45 @@
+<div class="container m-5">
+  <div class="cocktail-container card m-3">
+    <div class="d-flex justify-content-center">
+      <h1><%= @cocktail.name %></h1>
+    </div>
+    <div class="d-flex cocktail-image justify-content-center">
+      <%= cl_image_tag @cocktail.photo, height: 200, width: 250, crop: :fill %>
+    </div>
+      <div class="d-flex cocktail-image justify-content-center">
+        <%= render "image_form" %>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-around">
+      <div class="card ingredient-content p-3">
+            <h3 class="border-bottom">Ingredients</h3>
+          <% @cocktail.doses.each do |dose| %>
+          <div class="d-flex justify-content-center border-bottom">
+              <%= dose.ingredient.name %>
+              <%= dose.description %>
+          </div>
+          <% end %>
+        </div>
+
+
+      <div class="card ingredient-content p-3">
+        <%= render "dose_form" %>
+      </div>
+
+    </div>
+</div>
+
+      <div class="links">
+        <%= link_to "back", cocktails_path %>
+      </div>
+
+
+
+
+
+
+
+
+
+
