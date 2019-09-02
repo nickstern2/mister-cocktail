@@ -35,6 +35,8 @@ gem 'simple_form'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'autoprefixer-rails'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

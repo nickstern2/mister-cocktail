@@ -1,14 +1,50 @@
-<div class="container">
-  <% @cocktails.each do |cocktail| %>
-    <%# raise %>
-  <%= link_to cocktail_path(cocktail.id) do %>
-    <div class="card">
-      <%= cocktail.name %>
-      <%= link_to 'Destroy',  cocktail,  method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
+  <div class="title d-flex justify-content-center">
+    <h1>Cocktail list</h1>
+  </div>
+
+  <div class="cards m-5">
+    <% @cocktails.each do |cocktail| %>
+      <%# if cocktail.photo.url != nil %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path cocktail.photo %>');">
+      <%# else %>
+      <%# end %>
+      <div class="cocktail-card-content p-3">
+        <%= link_to cocktail_path(cocktail.id) do %>
+          <div class="d-flex justify-content-center pb-2">
+            <%= cocktail.name %>
+          </div>
+        <% end %>
+          <div class="d-flex justify-content-around">
+            <%= link_to 'Destroy',  cocktail,  method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to "edit", edit_cocktail_path(cocktail.id) %>
+          </div>
+      </div>
+  </div>
     <% end %>
-  <% end %>
+  </div>
+
+
+
 
   <%= link_to "Create a Cocktail", new_cocktail_path %>
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
